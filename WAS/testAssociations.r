@@ -98,5 +98,9 @@ testAssociations <- function(currentVar, currentVarShort, thisdata, varlogfile, 
     	print(paste("ERROR:", currentVar, e, '\n'))
     })
     # Return the data that was used in the test.
-    return(data_to_add)
+    if (exists('data_to_add')) {
+        return(data_to_add)
+    } else {
+	return(NULL)
+    }
 }
